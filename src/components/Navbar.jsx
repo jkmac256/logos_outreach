@@ -11,24 +11,23 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white text-[#1E40AF] shadow-lg fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-6 py-10 flex justify-center items-center text-center gap-10">
+      <div className="max-w-7xl mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
         {/* Logo */}
         <Link
           to="/"
-          className={`text-4xl font-bold ${
+          className={`text-2xl md:text-4xl font-bold ${
             isActive("/") ? "text-[#FF8C00]" : "text-[#FF8C00]"
           }`}
         >
-           LOGOS
-          OUTREACH
+          LOGOS OUTREACH
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 items-center justify-center">
+        <ul className="hidden md:flex gap-8 items-center">
           <li>
             <Link
               to="/"
-              className={`transition-colors duration-300 text-2xl font-bold ${
+              className={`transition-colors duration-300 text-lg font-semibold ${
                 isActive("/") ? "text-[#FF8C00]" : "hover:text-[#FF8C00]"
               }`}
             >
@@ -40,10 +39,10 @@ export default function Navbar() {
           <li
             className="relative"
             onMouseEnter={() => setAboutOpen(true)}
-            onMouseLeave={() => setTimeout(() => setAboutOpen(false), 1000)}
+            onMouseLeave={() => setTimeout(() => setAboutOpen(false), 500)}
           >
             <button
-              className={`transition-colors duration-300 text-2xl font-bold ${
+              className={`transition-colors duration-300 text-lg font-semibold ${
                 location.pathname.startsWith("/about")
                   ? "text-[#FF8C00]"
                   : "hover:text-[#FF8C00]"
@@ -77,7 +76,7 @@ export default function Navbar() {
           <li>
             <Link
               to="/programs"
-              className={`transition-colors duration-300 text-2xl font-bold ${
+              className={`transition-colors duration-300 text-lg font-semibold ${
                 isActive("/programs") ? "text-[#FF8C00]" : "hover:text-[#FF8C00]"
               }`}
             >
@@ -88,7 +87,7 @@ export default function Navbar() {
           <li>
             <Link
               to="/contact"
-              className={`transition-colors duration-300 text-2xl font-bold ${
+              className={`transition-colors duration-300 text-lg font-semibold ${
                 isActive("/contact") ? "text-[#FF8C00]" : "hover:text-[#FF8C00]"
               }`}
             >
@@ -99,22 +98,22 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <div
-          className="md:hidden flex flex-col gap-1 cursor-pointer items-center justify-center"
+          className="md:hidden flex flex-col gap-1 cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
           <span
-            className={`w-6 h-0.5 bg-white transition-all duration-300 ${
-              isOpen ? "rotate-45 translate-y-1.5" : ""
+            className={`w-7 h-1 bg-[#1E40AF] transition-all duration-300 ${
+              isOpen ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
-            className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+            className={`w-7 h-1 bg-[#1E40AF] transition-all duration-300 ${
               isOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`w-6 h-0.5 bg-white transition-all duration-300 ${
-              isOpen ? "-rotate-45 -translate-y-1.5" : ""
+            className={`w-7 h-1 bg-[#1E40AF] transition-all duration-300 ${
+              isOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
         </div>
@@ -122,12 +121,12 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <ul className="md:hidden bg-[#1E40AF] text-white flex flex-col gap-4 px-6 py-4 border-t border-[#FF8C00] text-center items-center">
+        <ul className="md:hidden bg-[#1E40AF] text-white flex flex-col gap-4 px-6 py-6 border-t border-[#FF8C00] text-center items-center">
           <li>
             <Link
               to="/"
               onClick={() => setIsOpen(false)}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 text-lg ${
                 isActive("/") ? "text-[#FF8C00]" : "hover:text-[#FF8C00]"
               }`}
             >
@@ -139,7 +138,7 @@ export default function Navbar() {
           <li className="w-full flex flex-col items-center">
             <button
               onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 text-lg ${
                 location.pathname.startsWith("/about")
                   ? "text-[#FF8C00]"
                   : "hover:text-[#FF8C00]"
@@ -175,18 +174,19 @@ export default function Navbar() {
             <Link
               to="/programs"
               onClick={() => setIsOpen(false)}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 text-lg ${
                 isActive("/programs") ? "text-[#FF8C00]" : "hover:text-[#FF8C00]"
               }`}
             >
               Programs
             </Link>
           </li>
+
           <li>
             <Link
               to="/contact"
               onClick={() => setIsOpen(false)}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 text-lg ${
                 isActive("/contact") ? "text-[#FF8C00]" : "hover:text-[#FF8C00]"
               }`}
             >

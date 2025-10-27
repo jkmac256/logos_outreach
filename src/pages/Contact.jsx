@@ -5,13 +5,18 @@ export default function Contact() {
         Contact & Partner
       </h1>
 
-      {/* Map / Banner Image */}
-      <div className="w-full max-w-4xl h-64 rounded-lg mb-8 mx-auto overflow-hidden border border-[#1E40AF]/20 shadow-md">
-        <img
-          src="/images/contact-map.jpg"
-          alt="Contact Map"
-          className="w-full h-full object-cover"
-        />
+      {/* Google Map Embed */}
+      <div className="w-full max-w-4xl h-96 rounded-lg mb-8 mx-auto overflow-hidden border border-[#1E40AF]/20 shadow-md">
+        <iframe
+          title="Logos Outreach Church Location"
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7979.1835787317!2d30.674071045398286!3d-0.6105579975339053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sKatete%20Mbarara%2C%20PO%20BOX%20420367!5e0!3m2!1sen!2suk!4v1761572167566!5m2!1sen!2suk"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
 
       <p className="max-w-2xl mx-auto mb-4 text-xl">
